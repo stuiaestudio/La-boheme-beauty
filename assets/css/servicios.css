@@ -1,0 +1,29 @@
+/* Carta y salón */
+:root { --paper: #faf4ee; --ink: #392a2e; --wine: #813e53; --line: #dec8c7; }
+.catalog { display:block; background:#fffaf6; padding:clamp(40px,5vw,80px) max(6vw,calc((100% - 1320px)/2)); }
+.catalog-head { display:flex; align-items:end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:26px; }
+.catalog-head h2 { margin:6px 0 0; }
+.catalog-head .eyebrow { margin:0; color:var(--wine); }
+.service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; gap:12px; }
+.service-grid details { border:1px solid var(--line); border-radius:18px; background:#f8ebe8; overflow:hidden; }
+.service-grid details:nth-child(3n+2) { background:#f4e6ec; }
+.service-grid details:nth-child(3n) { background:#f5ece1; }
+.service-grid summary { padding:20px 16px; }
+.service-grid summary strong { font-size:clamp(21px,1.8vw,29px); margin-bottom:4px; }
+.service-grid summary small { display:block; line-height:1.3; }
+.service-grid summary::after { width:27px;height:27px;line-height:25px;color:var(--wine); }
+.service-grid details[open] { background:white; box-shadow:0 6px 22px #6937430d; }
+.service-grid summary:hover { background:#ffffff65; }
+.service-grid ul { list-style:none; padding:0 18px; margin:0 0 10px; }
+.service-grid li { border-top:1px solid #ecdedc; padding:7px 0; margin:0; font-size:14px; }
+.studio { background:#eedbd8; color:var(--ink); display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); padding:0; gap:0; }
+.studio-photo { width:100%;height:100%;min-height:330px;max-height:620px;object-fit:cover; }
+.studio-copy { align-self:center;padding:clamp(28px,4.5vw,80px); }
+.studio-copy h2 { margin:10px 0 24px; font-size:clamp(42px,4.3vw,72px); }
+.studio em { color:var(--wine); }
+.studio-copy p { max-width:53ch; }
+.studio-copy h3 { font-size:23px; }
+.studio-copy h3:not(:first-child) { margin-top:19px; }
+.studio-copy h3:last-of-type { padding-top:18px;border-top:1px solid #cba7aa; }
+@media(max-width:950px) { .service-grid {grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media(max-width:650px) { .service-grid,.studio {grid-template-columns:1fr;} .studio-photo {height:225px;min-height:0;} .service-grid summary {padding:14px 16px;} .catalog-head h2 {font-size:46px;} }
